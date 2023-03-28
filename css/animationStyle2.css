@@ -1,0 +1,153 @@
+/*공통영역 스타일*/
+*{margin:0; padding:0}
+html,body{
+	width:100%;
+	height:100%;
+}
+
+.boundceWrap{
+	width:100%;
+	height:100%;
+	box-sizing:border-box;
+	position:relative;
+	background:url(../images/ani1.jpg) no-repeat;
+	background-size:100% 100%;
+	animation:aniback 15s infinite;	/*배경이미지 화면전환효과 애니메이션 적용*/
+}
+
+.boundceWrap>div{
+	width:20px;
+	height:20px;
+	border-radius:50%;
+	position:absolute;
+	bottom:0;
+	animation:bounceAni 2s infinite;
+}
+
+.boundceWrap .round1{
+	left:5%;
+	background:red;
+	animation-duration:5s;
+	}
+.boundceWrap .round2{
+	left:25%;
+	background:blue;
+	animation-duration:10s;
+	}
+.boundceWrap .round3{
+	left:50%;
+	background:green;
+	animation-duration:7s;
+	}
+.boundceWrap .round4{
+	left:75%;
+	background:yellow;
+	animation-duration:6s;
+	}
+.boundceWrap .round5{
+	left:90%;
+	background:black;
+	}
+
+
+/*배경이미지 화면전환효과 애니메이션 생성*/
+@keyframes aniback{
+	0%,100%{
+		background:url(../images/ani1.jpg) no-repeat;
+		background-size:100% 100%;
+		}
+	33%{
+		background:url(../images/ani2.jpg) no-repeat;
+		background-size:100% 100%;
+		}
+	
+	66%{
+		background:url(../images/ani3.jpg) no-repeat;
+		background-size:100% 100%;
+		}
+}
+
+/*바운스 애니메이션 생성*/
+@keyframes bounceAni{
+	0%,100%{bottom:0;}
+	50%{bottom:90%;}
+}
+
+.circleWrap{position:relative;}
+
+.circleWrap>div{
+	position:absolute;
+	bottom:100px;
+	right:100px;
+	width:150px;
+	height:150px;
+}
+
+.circleWrap .circle1{
+	background:yellow;
+	border-radius:100% 0 0 0;	/*border-top-left-radius:100%;*/
+	bottom:250px;
+	right:250px;
+	animation:aniMove2 4s infinite;
+}
+
+.circleWrap .circle2{
+	background:blue;
+	border-radius:0 100% 0 0;	/*border-top-right-radius:100%;*/
+	bottom:250px;
+	animation:aniMove3 4s infinite;
+}
+
+.circleWrap .circle3{
+	background:red;
+	border-radius:0 0 100% 0;	/*border-bottom-right-radius:100%;*/
+	animation:aniMove4 4s infinite;
+}
+
+.circleWrap .circle4{
+	background:green;
+	border-radius:0 0 0 100%;	/*border-bottom-left-radius:100%;*/
+	right:250px;
+	animation:aniMove5 4s infinite;
+}
+
+/*회전 애니메이션 생성*/
+@keyframes aniMove2{
+	0%,100%{background:yellow;}
+	
+	25%{background:blue;}
+	
+	50%,100%{background:red;}
+		
+	75%{background:green;}
+}
+
+@keyframes aniMove3{
+	0%,100%{background:blue;}
+	
+	25%{background:red;}
+		
+	50%,100%{background:green;}
+	
+	75%{background:yellow;}
+}
+
+@keyframes aniMove4{
+	0%,100%{background:red;}
+	
+	25%{background:green;}
+	
+	50%,100%{background:yellow;}
+	
+	75%{background:blue;}
+}
+
+@keyframes aniMove5{
+	0%,100%{background:green;}
+	
+	25%{background:yellow;}
+	
+	50%,100%{background:blue;}
+	
+	75%{background:red;}
+}
